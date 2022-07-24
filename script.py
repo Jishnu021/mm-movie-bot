@@ -1,9 +1,9 @@
 class Script(object):
     START_TXT = """Hello {},
 
-My name is <a href=https://t.me/{}>{}</a>!
+I am <a href=https://t.me/{}>{}</a>!
 
-<b>I can provide Movies. A Telegram Auto Filter Bot. Its Easy To Use Me :)
+<b>An Advanced File Search Bot Created by @mastermindmayankproject :)
 
 Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
 
@@ -12,7 +12,7 @@ Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
 <b>Here Is The Help For My Commands.</b>"""
 
     ABOUT_TXT = """<b>➥ My name: {}
-➥ Creator: <a href='https://t.me/zautekm'>Zaute Km</a>
+➥ Creator: <a href='https://t.me/m4mastermindmayank'>Mastermind Mayank</a>
 ➥ Library: <a href='https://docs.pyrogram.org/'>Pyrogram</a>
 ➥ Language: Python 𝟹
 ➥ Data Base: <a href='https://www.mongodb.com/'>MongoDB</a>
@@ -20,11 +20,11 @@ Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
 ➥ Build Status: v2.0.1 [ Beta ]"""
 
     SOURCE_TXT = """<b>Source:</b>
-IMDb is a Open source project.
-Source: <a href='https://github.com/josprojects/tgmoviebot'>GitHub - Click here 👈</a>
+This Bot is not an Open source project.
+Source: <a href='t.me/mastermindmayank_bots/12'>purchase source code</a>
 
 <b>DEVS:</b>
-- <a href='https://t.me/josprojects'>Jos Projects</a>
+- <a href='https://t.me/mastermindmayankproject'>Jos Projesct</a>
 
 <b>SUPPORT GROUP</b>
 - <a href='https://t.me/+y53tWFUw6Q43NzE9'>Jos Movie Club</a>"""
