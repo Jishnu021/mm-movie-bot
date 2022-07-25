@@ -942,7 +942,7 @@ async def auto_filter(client, msg, spoll=False):
         InlineKeyboardButton("Series ⭕️", url="https://t.me/+3LZhHBzPIGhjYTZl")
     ])
     btn.insert(0, [
-        InlineKeyboardButton("⭕️ Join Our Channel ⭕️",url="https://t.me/mastermindmayankprojects")
+        InlineKeyboardButton("⭕️ Join Our Channel ⭕️",url="https://t.me/mastermindmayankproject")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
