@@ -88,6 +88,18 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+     btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🎬 {search} 🎬', 'reqst1')
+        ]
+    )
+    btn.insert(1,
+        [
+            InlineKeyboardButton(f'🎫 ғɪʟᴇs: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'💡 ᴛɪᴘs', 'tips'),
+            InlineKeyboardButton(f'ℹ️ ɪɴғᴏ', 'info')
+        ]
+    )   
 
     if 0 < offset <= 10:
         off_set = 0
@@ -117,7 +129,7 @@ async def next_page(bot, query):
     btn.insert(0,
             [
                 InlineKeyboardButton("⭕️ Movie", url="https://t.me/+kM7dpYrZWftjNWM1"),
-                InlineKeyboardButton("Series ⭕️", url="https://t.me/+3LZhHBzPIGhjYTZl")
+                InlineKeyboardButton("Series ⭕️", url="https://t.me/+kM7dpYrZWftjNWM1")
             ])
 
     btn.insert(0, [
@@ -143,7 +155,7 @@ async def advantage_spoll_choker(bot, query):
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.message_id)
     if not movies:
-        return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
+        return await query.answer("𝐋𝐢𝐧𝐤 𝐄𝐱𝐩𝐢𝐫𝐞𝐝 𝐊𝐢𝐧𝐝𝐥𝐲 𝐏𝐥𝐞𝐚𝐬𝐞 𝐒𝐞𝐚𝐫𝐜𝐡 𝐀𝐠𝐚𝐢𝐧 🙂.", show_alert=True)
     movie = movies[(int(movie_))]
     await query.answer('Checking for Movie in database...')
     k = await manual_filters(bot, query.message, text=movie)
@@ -153,7 +165,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('message @m4mastermindmayank to add this file')
+            k = await query.message.edit('request in @mastermindmayankmovies to add this file')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -217,7 +229,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("That's not for you!!", show_alert=True)
+                await query.answer("Buddy Don't Touch Others Property 😁", show_alert=True)
     elif "groupcb" in query.data:
         await query.answer()
 
@@ -360,7 +372,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pass
         elif int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(
-                "All right, but this is not yours.;\nNice Try! But, This Was Not Your Request, Request Yourself;",
+                "Buddy Don't Touch Others Property 😁",
                 show_alert=True)
 
         if not files_:
@@ -407,19 +419,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 await query.answer('Check PM, I have sent files in pm', show_alert=False)
         except UserIsBlocked:
-            await query.answer('Unblock the bot man !', show_alert=True)
+            await query.answer('start the bot in pm first', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒", show_alert=True)
+            await query.answer("join updates channel first then try again", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         if not files_:
-            return await query.answer('message @m4mastermindmayank to add this file')
+            return await query.answer('request in @mastermindmayankmovies to add this file')
         files = files_[0]
         title = files.file_name
         size = get_size(files.file_size)
@@ -468,6 +480,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        m=await query.message.reply_text("● ◌ ◌")
+        n=await m.edit("● ● ◌")
+        o=await n.edit("● ● ●")
+        await asyncio.sleep(1)
+        await o.delete()
         await query.message.edit_text(
             text=Script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             disable_web_page_preview=True,
@@ -503,7 +520,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('Zombies', callback_data='zombies'),
             InlineKeyboardButton('« Back', callback_data='start'),
-            InlineKeyboardButton('Adult Bot 🔞', url='https://t.me/premiumsecretsbot')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
