@@ -934,11 +934,36 @@ async def cb_handler(client: Client, query: CallbackQuery):
        elif query.data == "english":
         buttons = [[
             InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malayalam')
-     ],[
+            ],[
            
             InlineKeyboardButton("🕵️‍♂️ sᴇᴀʀᴄʜ ᴏɴ ɢᴏᴏɢʟᴇ 🕵️‍♂️", url=f"https://google.com/search?q={query}")
 
         ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(        
+            text=script.ENGLISH_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        await query.answer('ᴛʀᴀɴsʟᴀᴛᴇᴅ ᴛᴏ ᴇɴɢʟɪsʜ')
+    elif query.data == "malayalam":
+        buttons = [[
+            InlineKeyboardButton('🇬🇧 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪsʜ 🇬🇧', callback_data='english')
+          
+            ],[
+          
+            InlineKeyboardButton("🕵️‍♂️ sᴇᴀʀᴄʜ ᴏɴ ɢᴏᴏɢʟᴇ 🕵️‍♂️", url=f"https://google.com/search?q={query}")
+
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(        
+            text=script.MALAYALAM_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+        await query.answer('ᴛʀᴀɴsʟᴀᴛᴇᴅ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ')
+    try: await query.answer('Join @mastermindmayankproject for more') 
+    except: pass
 
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
