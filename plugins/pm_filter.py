@@ -833,6 +833,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('« Back', callback_data='about'),
             InlineKeyboardButton('Refresh ⧖', callback_data='rfrsh')
         ]]
+        reply1 = await query.message.reply_text(
+            text="▢▢▢"
+        )
+        await asyncio.sleep(0.5)
+        reply2 = await reply1.edit_text(
+            text="▣▢▢"
+        )
+        await asyncio.sleep(0.5)
+        reply3 = await reply2.edit_text(
+            text="▣▣▢"
+        )
+        await asyncio.sleep(0.5)
+        reply4 = await reply3.edit_text(
+            text="▣▣▣"
+        )
+        await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)
         total = await Media.count_documents()
         users = await db.total_users_count()
