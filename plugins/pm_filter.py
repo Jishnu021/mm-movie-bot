@@ -929,9 +929,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Alive ᴏʀ Alive S01E01\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\n©mastermindmayank", True)
     elif query.data == 'spelling':
         await query.answer("⚠️Search Google.com Find the Correct Spelling of Movie Name and Year. Type that in Group to get the Files⚠️", True)
-        elif query.data == 'pagees':
+    elif query.data == 'pagees':
         await query.answer(" ♦️If You Not See Your Files On This Page Then Click On Next Page..😌,",show_alert=True)
-       elif query.data == "english":
+    elif query.data == "english":
         buttons = [[
             InlineKeyboardButton('🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳', callback_data='malayalam')
             ],[
